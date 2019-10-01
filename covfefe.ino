@@ -1,8 +1,18 @@
 #include <JC_Button.h>
 
-unsigned int coffeeCount = 0;
-unsigned int mateCount = 0;
-unsigned int beerCount = 0;
+#define DRINKS_SIZE 3
+
+int drunkCounts[DRINKS_SIZE] = {
+  0,
+  0,
+  0
+};
+
+String drinkNames[DRINKS_SIZE] = {
+  "Coffee",
+  "Mate",
+  "Beer"
+};
 
 unsigned long lastPressed = 0;
 unsigned long lastPrinted = 0;
@@ -22,7 +32,14 @@ void loop() {
   buttonLoop();
 
   if (lastPressed != lastPrinted && lastPressed + 1000 < millis()) {
-    printOut("Coffee: " + String(coffeeCount));
+    String toPrint = "";
+
+    for (int i = 0; i < DRINKS_SIZE; i++) {
+      toPrint += drinkNames[i] + ": ";
+      toPrint += String(drunkCounts[i]) + " ";
+    }
+    
+    printOut(toPrint);
 
     lastPrinted = lastPressed;
   }

@@ -1,44 +1,39 @@
+Button buttons[DRINKS_SIZE] = {
+  Button(2),
+  Button(3),
+  Button(4)
+};
 
-Button buttonCoffee(2);
-Button buttonMate(3);
-Button buttonBeer(4);
+//int getIndexOfDrink(String drinkName) {
+//  for (int i = 0; i < DRINKS_SIZE; i++) {
+//    if (drinkNames[i] == drinkName) {
+//      return i;
+//    }
+//  }
+//}
 
 void setupButtons() {
-  buttonCoffee.begin();
-  buttonMate.begin();
-  buttonBeer.begin();
+  for (int i = 0; i < DRINKS_SIZE; i++) {
+    buttons[i].begin();
+  }
 }
 
 void buttonLoop() {
   readButtons();
 
-  if (buttonCoffee.wasPressed()) {
-    coffeeCount++;
+  for (int i = 0; i < DRINKS_SIZE; i++) {
+    if (buttons[i].wasPressed()) {
+      drunkCounts[i]++;
 
-    printOut("Coffee: " + String(coffeeCount));
+      printOutLn(drinkNames[i] + ": " + String(drunkCounts[i]));
 
-    lastPressed = millis();
-  }
-
-  if (buttonMate.wasPressed()) {
-    mateCount++;
-
-    printOut("Mate: " + String(mateCount));
-
-    lastPressed = millis();
-  }
-
-  if (buttonBeer.wasPressed()) {
-    beerCount++;
-
-    printOut("Beer: " + String(beerCount));
-
-    lastPressed = millis();
+      lastPressed = millis();
+    }
   }
 }
 
 void readButtons() {
-  buttonCoffee.read();
-  buttonMate.read();
-  buttonBeer.read();
+  for (int i = 0; i < DRINKS_SIZE; i++) {
+    buttons[i].read();
+  }
 }
