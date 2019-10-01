@@ -1,4 +1,5 @@
 #include <LiquidCrystal.h>
+#include <JC_Button.h>
 
 LiquidCrystal lcd(7, 8, 9, 10, 11 , 12);
 
@@ -14,12 +15,18 @@ void setup() {
   setupButtons();
 }
 
+Button button1(2);
+
 void setupButtons() {
-  pinMode(2, INPUT);
+  //pinMode(2, INPUT);
+
+  button1.begin();
 }
 
 void loop() {
-  int buttonState = digitalRead(2);
-
-  Serial.println(buttonState);
+  button1.read();
+  
+  if (button1.wasPressed()) {
+    Serial.println("pressed!");
+  }
 }
