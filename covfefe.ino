@@ -10,7 +10,16 @@ void setup() {
   lcd.begin(16, 2);
   lcd.setCursor(0,1);
   lcd.write("Okay!");
+
+  setupButtons();
+}
+
+void setupButtons() {
+  pinMode(2, INPUT);
 }
 
 void loop() {
+  int buttonState = digitalRead(2);
+
+  Serial.println(buttonState);
 }
