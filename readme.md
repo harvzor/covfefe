@@ -6,7 +6,7 @@ For tracking how many drinks were drunk, using an Arduino.
 
 When you drink a drink, click on a button to track you've drunk that drink.
 
-![Drinks Drunk Tracker]('/images/arduino-0v.jpg')
+![Drinks Drunk Tracker](/images/arduino-0v.jpg)
 
 ## Resources
 
