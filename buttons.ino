@@ -1,7 +1,8 @@
 Button buttons[DRINKS_SIZE] = {
   Button(2),
   Button(3),
-  Button(4)
+  Button(4),
+  Button(5)
 };
 
 //int getIndexOfDrink(String drinkName) {

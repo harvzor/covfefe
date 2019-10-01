@@ -1,8 +1,9 @@
 #include <JC_Button.h>
 
-#define DRINKS_SIZE 3
+#define DRINKS_SIZE 4
 
 int drunkCounts[DRINKS_SIZE] = {
+  0,
   0,
   0,
   0
@@ -11,7 +12,8 @@ int drunkCounts[DRINKS_SIZE] = {
 String drinkNames[DRINKS_SIZE] = {
   "Coffee",
   "Mate",
-  "Beer"
+  "Beer",
+  "Orangina"
 };
 
 unsigned long lastPressed = 0;
