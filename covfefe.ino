@@ -16,9 +16,11 @@ void setup() {
 
 unsigned int coffeeCount = 0;
 unsigned int mateCount = 0;
+unsigned int beerCount = 0;
 
 Button buttonCoffee(2);
 Button buttonMate(3);
+Button buttonBeer(4);
 
 void setupLCD() {
   lcd.begin(16, 2);
@@ -29,11 +31,13 @@ void setupLCD() {
 void setupButtons() {
   buttonCoffee.begin();
   buttonMate.begin();
+  buttonBeer.begin();
 }
 
 void readButtons() {
   buttonCoffee.read();
   buttonMate.read();
+  buttonBeer.read();
 }
 
 void loop() {
@@ -49,6 +53,12 @@ void loop() {
     mateCount++;
 
     printOut("Mate: " + String(mateCount));
+  }
+
+  if (buttonBeer.wasPressed()) {
+    beerCount++;
+
+    printOut("Beer: " + String(beerCount));
   }
 }
 
