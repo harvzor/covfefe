@@ -32,3 +32,11 @@ void printOutLn(String str, int row) {
   lcd.write(str.c_str());
   Serial.println(str);
 }
+
+void printOutLn(String str, int row, bool clear) {
+  if (clear) {
+    lcd.clear();
+  }
+  
+  printOutLn(str, row);
+}

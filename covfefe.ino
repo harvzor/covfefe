@@ -32,8 +32,16 @@ void setup() {
 void loop() {
   buttonLoop();
 
-  if (lastPressed + 1000 < millis() && lastPrinted + 1000 < millis()) {
-    printOutLn(String(lastDrinkPrinted + 1) + "# " + drinkNames[lastDrinkPrinted] + ": " + String(drunkCounts[lastDrinkPrinted]));
+  if (lastPressed + 1000 < millis() && lastPrinted + 3000 < millis()) {
+    printOutLn(
+      getDrinkStats(lastDrinkPrinted),
+      0,
+      true
+    );
+    printOutLn(
+      getDrinkStats(lastDrinkPrinted + 1 == DRINKS_SIZE ? 0 : lastDrinkPrinted + 1),
+      1
+    );
     
     lastPrinted = millis();
 
@@ -45,4 +53,8 @@ void loop() {
   }
 
   delay(5);
+}
+
+String getDrinkStats(int i) {
+  return drinkNames[i] + ": " + String(drunkCounts[i]);
 }
