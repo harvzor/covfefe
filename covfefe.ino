@@ -16,6 +16,7 @@ String drinkNames[DRINKS_SIZE] = {
 
 unsigned long lastPressed = 0;
 unsigned long lastPrinted = 0;
+unsigned long lastDrinkPrinted = 0;
 
 void setup() {
   Serial.begin(9600);  
@@ -31,17 +32,16 @@ void setup() {
 void loop() {
   buttonLoop();
 
-  if (lastPressed != lastPrinted && lastPressed + 1000 < millis()) {
-    String toPrint = "";
-
-    for (int i = 0; i < DRINKS_SIZE; i++) {
-      toPrint += drinkNames[i] + ": ";
-      toPrint += String(drunkCounts[i]) + " ";
-    }
+  if (lastPressed + 1000 < millis() && lastPrinted + 1000 < millis()) {
+    printOutLn(String(lastDrinkPrinted + 1) + "# " + drinkNames[lastDrinkPrinted] + ": " + String(drunkCounts[lastDrinkPrinted]));
     
-    printOut(toPrint);
+    lastPrinted = millis();
 
-    lastPrinted = lastPressed;
+    lastDrinkPrinted++;
+
+    if (lastDrinkPrinted == DRINKS_SIZE) {
+      lastDrinkPrinted = 0;
+    }
   }
 
   delay(5);
