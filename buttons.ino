@@ -1,6 +1,3 @@
-unsigned int coffeeCount = 0;
-unsigned int mateCount = 0;
-unsigned int beerCount = 0;
 
 Button buttonCoffee(2);
 Button buttonMate(3);
@@ -19,18 +16,24 @@ void buttonLoop() {
     coffeeCount++;
 
     printOut("Coffee: " + String(coffeeCount));
+
+    lastPressed = millis();
   }
 
   if (buttonMate.wasPressed()) {
     mateCount++;
 
     printOut("Mate: " + String(mateCount));
+
+    lastPressed = millis();
   }
 
   if (buttonBeer.wasPressed()) {
     beerCount++;
 
     printOut("Beer: " + String(beerCount));
+
+    lastPressed = millis();
   }
 }
 
