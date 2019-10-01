@@ -15,18 +15,24 @@ void setup() {
   setupButtons();
 }
 
-Button button1(2);
+unsigned int coffeeCount = 0;
+
+Button buttonCoffee(2);
 
 void setupButtons() {
-  //pinMode(2, INPUT);
+  buttonCoffee.begin();
+}
 
-  button1.begin();
+void readButtons() {
+  buttonCoffee.read();
 }
 
 void loop() {
-  button1.read();
+  readButtons();
   
-  if (button1.wasPressed()) {
-    Serial.println("pressed!");
+  if (buttonCoffee.wasPressed()) {
+    coffeeCount++;
+
+    Serial.println("coffee!  " + String(coffeeCount));
   }
 }
