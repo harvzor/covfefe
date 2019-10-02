@@ -13,7 +13,7 @@ void setupLCD() {
 
     delay(3000);
 
-    printOutLn("Drinks Drunks", 0);
+    printOutLn("Drinks Drunk", 0);
     printOutLn("by @harvzor", 1);
 
     delay(3000);
