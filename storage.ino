@@ -13,6 +13,8 @@ void storageSetup() {
 
         drunkCounts[i] = EEPROM.readInt(memoryAddresses[i]);
     }
+
+    // storageReset();
 }
 
 // void storageReset() {
