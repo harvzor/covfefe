@@ -1,5 +1,3 @@
-#include <JC_Button.h>
-
 #define DRINKS_SIZE 4
 
 int drunkCounts[DRINKS_SIZE] = {

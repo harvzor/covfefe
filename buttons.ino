@@ -1,3 +1,4 @@
+#include <JC_Button.h>
 Button buttons[DRINKS_SIZE] = {
     Button(2),
     Button(3),
