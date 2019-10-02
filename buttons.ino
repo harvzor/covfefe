@@ -28,6 +28,8 @@ void buttonLoop() {
 
             printOutLn(drinkNames[i] + ": " + String(drunkCounts[i]));
 
+            setDrunkCount(i);
+
             lastPressed = millis();
         }
     }

@@ -2,7 +2,7 @@
 
 #define DRINKS_SIZE 4
 
-unsigned int drunkCounts[DRINKS_SIZE] = {
+int drunkCounts[DRINKS_SIZE] = {
     0,
     0,
     0,
@@ -27,6 +27,8 @@ void setup() {
     setupLCD();
 
     setupButtons();
+
+    storageSetup();
 
     Serial.println("Started!");
 }
