@@ -2,7 +2,7 @@
 
 #define DRINKS_SIZE 4
 
-int drunkCounts[DRINKS_SIZE] = {
+unsigned int drunkCounts[DRINKS_SIZE] = {
   0,
   0,
   0,
