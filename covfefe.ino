@@ -16,7 +16,6 @@ String drinkNames[DRINKS_SIZE] = {
 
 unsigned long lastPressed = 0;
 unsigned long lastPrinted = 0;
-unsigned long lastDrinkPrinted = 0;
 
 void setup() {
     Serial.begin(9600);
@@ -34,6 +33,15 @@ void setup() {
 void loop() {
     buttonLoop();
 
+    scrollingDrinks();
+
+    delay(5);
+}
+
+unsigned long lastDrinkPrinted = 0;
+
+// Show the drink counts scrolling through the display.
+void scrollingDrinks() {
     if (lastPressed + 1000 < millis() && lastPrinted + 3000 < millis()) {
         printOutLn(
             getDrinkStats(lastDrinkPrinted),
@@ -53,8 +61,6 @@ void loop() {
             lastDrinkPrinted = 0;
         }
     }
-
-    delay(5);
 }
 
 String getDrinkStats(int i) {

@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
+    "board": "arduino:avr:nano",
     "sketch": "covfefe.ino",
-    "port": "COM4"
+    "port": "COM4",
+    "configuration": "cpu=atmega328old"
 }

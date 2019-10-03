@@ -8,15 +8,15 @@ LiquidCrystal lcd(7, 8, 9, 10, 11 , 12);
 void setupLCD() {
     lcd.begin(LCD_LENGTH, LCD_HEIGHT);
 
-    printOutLn("Covfefe", 0);
-    printOutLn("by @harvzor", 1);
+    // printOutLn("Covfefe", 0);
+    // printOutLn("by @harvzor", 1);
 
-    delay(3000);
+    // delay(3000);
 
-    printOutLn("Drinks Drunk", 0);
-    printOutLn("by @harvzor", 1);
+    // printOutLn("Drinks Drunk", 0);
+    // printOutLn("by @harvzor", 1);
 
-    delay(3000);
+    // delay(3000);
 }
 
 void printOut(String str) {
